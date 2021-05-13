@@ -39,11 +39,11 @@ public class Sneaker {
     @DecimalMin(value = "0.0", inclusive = false)
     private BigDecimal price;
 
-    @URL(protocol = "http")
+    @URL(protocol = "https")
     @NotBlank
     private String imageUrl;
 
-    @URL
+    @URL(protocol = "https")
     @NotBlank
     private String shopUrl;
 
