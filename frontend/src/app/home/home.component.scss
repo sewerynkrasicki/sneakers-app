@@ -1,0 +1,19 @@
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .shoe-card{
+    margin-top: 5%;
+    width: 45%;
+    .img-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .shoe-img{
+        border-radius: 5%;
+        width: 60%;
+      }
+    }
+  }
+}
