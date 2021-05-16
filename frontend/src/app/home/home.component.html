@@ -9,15 +9,17 @@
         <img class="shoe-img" mat-card-image src="https://images.stockx.com/images/adidas-Yeezy-500-Taupe-Light.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1620285344">
       </div>
       <mat-card-content>
-        <h3>Opis:</h3>
         <p>
-          {{sneaker.description}}
+          <strong>Opis: </strong>{{sneaker.description}}
+        </p>
+        <p>
+          <strong>Cena: </strong> {{sneaker.price}} $
         </p>
       </mat-card-content>
     </mat-card-content>
     <mat-card-actions class="actions">
-      <button mat-button color="primary">Dowiedz się więcej</button>
-      <button mat-button color="primary">Edytuj</button>
+      <button mat-button color="primary" (click)="moveToShop(sneaker.shopUrl)">Więcej</button>
+      <button mat-button color="primary" (click)="openCreateDialog(sneaker)">Edytuj</button>
       <button mat-button color="primary" (click)="delete(sneaker.id)">Usuń</button>
     </mat-card-actions>
   </mat-card>

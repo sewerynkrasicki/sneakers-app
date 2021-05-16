@@ -16,12 +16,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateFormComponent,
+    EditFormComponent,
   ],
   imports: [
     BrowserModule,

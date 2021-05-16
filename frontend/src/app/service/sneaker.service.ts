@@ -14,6 +14,10 @@ export class SneakerService {
     return this.http.get(`${this.URL}`);
   }
 
+  getSneakerById(id: Number): Observable<Object> {
+    return this.http.get(`${this.URL}/${id}`)
+  }
+
   createNewSneaker(sneaker: Sneaker): Observable<Object> {
     return this.http.post(`${this.URL}`, sneaker);
   }
