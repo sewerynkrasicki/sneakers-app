@@ -1,9 +1,9 @@
 <div class="box">
-  <mat-card class="shoe-card">
+  <mat-card class="shoe-card" *ngFor="let sneaker of sneakers">
     <mat-card-content>
       <mat-card-header class="header">
-          <mat-card-title>SB Dunk Low Pro</mat-card-title>
-          <mat-card-subtitle>Street Hawker</mat-card-subtitle>
+          <mat-card-title>{{sneaker.brand}}</mat-card-title>
+          <mat-card-subtitle>{{sneaker.name}}</mat-card-subtitle>
       </mat-card-header>
       <div class="img-box">
         <img class="shoe-img" mat-card-image src="https://images.stockx.com/images/adidas-Yeezy-500-Taupe-Light.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1620285344">
@@ -11,12 +11,14 @@
       <mat-card-content>
         <h3>Opis:</h3>
         <p>
-          Zaspokój swój głód na najnowszą przekąskę od SB, zanim kuchnia zostanie zamknięta na noc.
+          {{sneaker.description}}
         </p>
       </mat-card-content>
     </mat-card-content>
     <mat-card-actions class="actions">
-        <button mat-button color="primary">Dowiedz się więcej</button>
+      <button mat-button color="primary">Dowiedz się więcej</button>
+      <button mat-button color="primary">Edytuj</button>
+      <button mat-button color="primary" (click)="delete(sneaker.id)">Usuń</button>
     </mat-card-actions>
   </mat-card>
 </div>

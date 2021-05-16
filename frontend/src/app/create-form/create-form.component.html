@@ -1,0 +1,84 @@
+<div class="create-form">
+  <h2 mat-dialog-title class="title">Dodaj nowy</h2>
+  <form #forms="ngForm" [formGroup]="createForm">
+    <div class="form-box">
+      <mat-form-field>
+        <mat-label>Podaj markę buta</mat-label>
+        <input matInput placeholder="Marka" formControlName="brand">
+        <mat-error *ngIf="createForm.controls.brand.errors?.required">
+          Marka jest <strong>wymagana.</strong>
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.brand.errors?.minLength">
+          Marka jest za krótka.
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.brand.errors?.maxLength">
+          Marka jest za długa.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Podaj model buta</mat-label>
+        <input matInput placeholder="Model" formControlName="name">
+        <mat-error *ngIf="createForm.controls.name.errors?.required">
+          Nazwa jest <strong>wymagana.</strong>
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.name.errors?.minLength">
+          Nazwa jest za krótka.
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.name.errors?.maxLength">
+          Nazwa jest za długa.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Podaj opis</mat-label>
+        <textarea matInput placeholder="Model" formControlName="description"></textarea>
+        <mat-error *ngIf="createForm.controls.description.errors?.required">
+          Opis jest <strong>wymagany.</strong>
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.description.errors?.minLength">
+          Opis jest za krótki.
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.description.errors?.maxLength">
+          Opis jest za długi.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Podaj cenę</mat-label>
+        <input matInput placeholder="Cena" formControlName="price">
+        <mat-error *ngIf="createForm.controls.price.errors?.required">
+          Opis jest <strong>wymagany.</strong>
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.price.errors?.pattern">
+          Cena musi być we właściwym formacie.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Podaj ściężkę do obrazka</mat-label>
+        <input matInput placeholder="Obrazek" formControlName="imageUrl">
+        <mat-error *ngIf="createForm.controls.price.errors?.required">
+          Obrazek jest <strong>wymagany.</strong>
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.price.errors?.pattern">
+          Ścieżka musi być we właściwym formacie.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Podaj ściężkę do sklepu</mat-label>
+        <input matInput placeholder="Sklep" formControlName="shopUrl">
+        <mat-error *ngIf="createForm.controls.price.errors?.required">
+          Sklep jest <strong>wymagany.</strong>
+        </mat-error>
+        <mat-error *ngIf="createForm.controls.price.errors?.pattern">
+          Ścieżka musi być we właściwym formacie.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wybierz date</mat-label>
+        <input matInput type="date" formControlName="releaseDate">
+        <mat-error *ngIf="createForm.controls.releaseDate.errors?.required">
+          Data jest <strong>wymagana.</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<button mat-button class="but" [disabled]="!createForm.valid" color="primary" (click)="onSubmitted()">Dodaj</button>
