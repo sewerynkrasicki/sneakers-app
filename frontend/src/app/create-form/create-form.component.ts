@@ -12,9 +12,9 @@ import {Router} from "@angular/router";
 })
 export class CreateFormComponent implements OnInit {
   createForm = this.fb.group({
-    brand: ['', [Validators.min(3), Validators.max(100), Validators.required]],
-    name: ['', [Validators.min(3), Validators.max(100), Validators.required]],
-    description: ['', [Validators.min(3), Validators.max(300), Validators.required]],
+    brand: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
+    name: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
+    description: ['', [Validators.minLength(3), Validators.maxLength(300), Validators.required]],
     price: ['', [Validators.pattern(/^\d+\.\d{0,2}$/), Validators.required]],
     imageUrl: ['', [Validators.pattern(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/), Validators.required]],
     shopUrl: ['', [Validators.pattern(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/), Validators.required]],

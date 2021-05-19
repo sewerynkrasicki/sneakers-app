@@ -12,9 +12,9 @@ import {Router} from "@angular/router";
 })
 export class EditFormComponent implements OnInit {
   editForm = this.fb.group({
-    brand: [this.data.brand, [Validators.min(3), Validators.max(100), Validators.required]],
-    name: [this.data.name, [Validators.min(3), Validators.max(100), Validators.required]],
-    description: [this.data.description, [Validators.min(3), Validators.max(300), Validators.required]],
+    brand: [this.data.brand, [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
+    name: [this.data.name, [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
+    description: [this.data.description, [Validators.minLength(3), Validators.maxLength(300), Validators.required]],
     price: [this.data.price, [Validators.pattern(/^\d+\.\d{0,2}$/), Validators.required]],
     imageUrl: [this.data.imageUrl, [Validators.pattern(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/), Validators.required]],
     shopUrl: [this.data.shopUrl, [Validators.pattern(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/), Validators.required]],
